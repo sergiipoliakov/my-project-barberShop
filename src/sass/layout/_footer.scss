@@ -1,0 +1,55 @@
+.footer {
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.2em;
+    @extend %container;
+    @media screen and (max-width: $mobile-max) {
+      padding-top: 44px;
+      padding-bottom: 44px;
+    }
+    @media screen and (min-width: $tablet-min) {
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+  }
+  &-label {
+    color: $text-color-2;
+    @media screen and (max-width: $mobile-max) {
+      margin-top: 33px;
+    }
+  }
+
+  &-list {
+    display: flex;
+  }
+
+  &-list .item:not(:last-child) {
+    margin-right: 40px;
+  }
+  &-list .item {
+    align-items: center;
+    & .link:hover,
+    & .link:focus {
+      color: $accent-color;
+    }
+    &:first-child::before {
+      content: '';
+      display: inline-block;
+      width: 60px;
+      height: 1px;
+      border-radius: 2px;
+      margin-right: 40px;
+      margin-left: 0;
+      padding: 0;
+      background-color: $title-color;
+    }
+  }
+  &-list .link {
+    color: $title-color;
+  }
+}
